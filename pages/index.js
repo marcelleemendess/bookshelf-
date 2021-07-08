@@ -1,9 +1,8 @@
 import styles from '../styles/Home.module.css'
-
 import Head from 'next/head'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Spinner from '../components/layout/Spinner';
+import Loader from "react-loader-spinner";
 
 
 const Home = () => {
@@ -27,8 +26,7 @@ const Home = () => {
       setBook('');
       
     }
-  
-  
+    
   return (
     <>
       <div className="root">
@@ -56,9 +54,9 @@ const Home = () => {
             </div>
           </form>
 
-          {loading ? (<Spinner />)
+          {loading ?
+            (<span><Loader type="ThreeDots" color="black" height={80} width={80} /></span>)
             :
-            
             (<div className="books">
               {result.length >= 1 ? result.map(book => 
                 <div key={book.etag} className="book" >
