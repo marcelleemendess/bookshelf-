@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -22,11 +21,15 @@ const Home = () => {
         })
         .catch(error => {
         console.log(error.message)
-        });
-      setBook('');
-      
+        });     
     }
+  
+  const handleClear = () => {
+    setBook('');
+    setResult('')
     
+  }
+  
   return (
     <>
       <div className="root">
@@ -37,6 +40,13 @@ const Home = () => {
           <h1>BookShelf</h1>
           <form onSubmit={handleSubmit} >
             <div className="search-block">
+              {book ?
+                <div className="clear" onClick={handleClear}>
+                  <div className="clear__left"></div>
+                  <div className="clear__right"></div>
+                </div>
+                : null
+              }
               <input
                 className="input"
                 type="text"
@@ -55,7 +65,7 @@ const Home = () => {
           </form>
 
           {loading ?
-            (<span><Loader type="ThreeDots" color="black" height={80} width={80} /></span>)
+            <span><Loader type="ThreeDots" color="black" height={80} width={80} /></span>
             :
             (<div className="books">
               {result.length >= 1 ? result.map(book => 

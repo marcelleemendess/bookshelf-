@@ -4,8 +4,7 @@ body {
   background-color: #bbf1cb;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Times New Roman';
 }
 
 .root {
@@ -27,7 +26,7 @@ h1 {
   display: block;
   color: #086114;
   font-size: 45px;
-  font-family: Arial, Helvetica, sans-serif, cursive;
+  font-family: 'Times New Roman';
   text-shadow: 1px 1px rgb(0 0 0 / 100%);
   margin-block-start: 0.67em;
   margin-block-end: 0.67em;
@@ -35,9 +34,48 @@ h1 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
 .search-block {
   position: relative;
   display: block;
+}
+
+.clear {
+  display: block;
+  top: 5px;
+  left: 10px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+  z-index: 1;
+  position: absolute;
+}
+
+.clear__left,
+.clear__right {
+  background: #ccc;
+  height: 5px;
+  width: 100%;
+}
+
+.clear__left {
+  transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+.clear__right {
+  transition: 0.4s;
+  margin-top: 7px;
+  transform: rotate(45deg) translate(0);
 }
 
 input {
@@ -97,6 +135,13 @@ input {
   padding: 5px 0 0 15px;
 }
 
+.book__title h2 {
+  color: #042909;
+  font-size: 17px;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
 .book__img-block {
   width: 128px;
   margin: 10px;
@@ -151,29 +196,20 @@ footer a {
   input {
     width: 350px;
   }
-}
-
-@media only screen and (max-width: 520px) {
   .book {
     justify-content: center;
+  }
+  .book__title {
+    width: 90%;
+    padding-right: 15px;
+  }
+  .book__desc {
+    width: 90%;
   }
 }
 
 @media only screen and (min-width: 900px) {
   .book {
     width: 49%;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  .book__title {
-    width: 90%;
-    padding-right: 15px;
-  }
-}
-
-@media only screen and (max-width: 520px) {
-  .book__desc {
-    width: 90%;
   }
 }
