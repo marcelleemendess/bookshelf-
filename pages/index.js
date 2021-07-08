@@ -51,7 +51,7 @@ const Home = () => {
                 className="input"
                 type="text"
                 value={book}
-                placeholder="Search for Books"
+                placeholder="Search for: books, authors, ISBN..."
                 onChange={(e) => setBook(e.target.value)}
                 required
               />
