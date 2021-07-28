@@ -7,8 +7,8 @@ Live version available here:
 
 ## About the App: 
 
-The project is a web application used to look up about Books. It's possible to find the books easily using ISBN, title, or author.
-You will find 
+The project is a web application used to look up Books. It's possible to find the books easily using ISBN, title, or author.
+
 
 
 
